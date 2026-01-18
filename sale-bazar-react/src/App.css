@@ -1,0 +1,30 @@
+
+
+.auth-card {
+  width: 350px;
+  padding: 30px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  color: white;
+}
+
+.bg-salebazar {
+  width: 100vw;
+  height: 100vh;
+
+  background:
+    url("./assets/login-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.component-gap{
+  padding:10px;
+}
