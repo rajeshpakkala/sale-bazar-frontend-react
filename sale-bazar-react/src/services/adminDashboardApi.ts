@@ -1,14 +1,14 @@
 import axios from "axios";
 import { authStorage } from "../storage/authStorage";
 
-export const authApi = axios.create({
-  baseURL: "/salebazar/auth",
+export const adminDashboardApi = axios.create({
+  baseURL: "/salebazar/admin",
   headers: {
     "Content-Type": "application/json",
   },
 });
 
-authApi.interceptors.request.use((config) => {
+adminDashboardApi.interceptors.request.use((config) => {
   const token = authStorage.getToken();
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;

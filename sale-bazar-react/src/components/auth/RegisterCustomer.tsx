@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { authApi } from "../../services/authApi";
-import type{ AuthResponse } from "../../types/auth";
+import type { AuthResponse } from "../../types/auth";
 
 export default function RegisterCustomer() {
   const [email, setEmail] = useState("");
@@ -13,9 +13,10 @@ export default function RegisterCustomer() {
         "/register/customer",
         { email, password }
       );
+
       setMsg(res.data.message);
     } catch (err: any) {
-      setMsg(err.response?.data?.message || "Error");
+      setMsg(err.response?.data?.message || "Registration failed");
     }
   };
 

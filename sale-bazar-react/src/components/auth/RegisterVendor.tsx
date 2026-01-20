@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { authApi } from "../../services/authApi";
-import { AuthResponse } from "../../types/auth";
+import type { AuthResponse } from "../../types/auth";
 
 export default function RegisterVendor() {
   const [email, setEmail] = useState("");
@@ -14,9 +14,10 @@ export default function RegisterVendor() {
         "/register/vendor",
         { email, password, businessName }
       );
+
       setMsg(res.data.message);
     } catch (err: any) {
-      setMsg(err.response?.data?.message || "Error");
+      setMsg(err.response?.data?.message || "Registration failed");
     }
   };
 
